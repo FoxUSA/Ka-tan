@@ -1,0 +1,18 @@
+{
+  "name": "Ka-tan",
+  "homepage": "https://github.com/FoxUSA/Ka-tan",
+  "authors": [
+    "FoxUSA <jake@jakelis.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

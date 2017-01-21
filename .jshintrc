@@ -1,0 +1,11 @@
+{
+    "undef": true,
+    "unused": true,
+    "mocha": true,
+    "strict": false,
+    "browser": true,
+    "devel":true,
+    "jquery":true,
+    "predef": [ "me","module"],
+    "globals":{"game":true}
+}
