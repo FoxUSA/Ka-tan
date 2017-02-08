@@ -5,16 +5,13 @@
   "main": "Gruntfile.js",
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "melonJS": "melonjs/melonJS#4.1.0"
-},
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^0.4.5",
     "grunt-cli": "^1.2.0",
+    "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-contrib-connect": "^1.0.2",
     "grunt-shell": "^2.1.0",
-    "melonjsBoilerplate": "melonjs/boilerplate"
+    "grunt-typescript": "^0.8.0"
   }
 }

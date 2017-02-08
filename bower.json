@@ -1,11 +1,11 @@
 {
-  "name": "Ka-tan",
+  "name": "ka-tan",
   "homepage": "https://github.com/FoxUSA/Ka-tan",
   "authors": [
     "FoxUSA <jake@jakelis.com>"
   ],
   "description": "",
-  "main": "index.html",
+  "main": "",
   "moduleType": [],
   "license": "MIT",
   "ignore": [
@@ -14,5 +14,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "phaser": "^2.6.2"
+  }
 }

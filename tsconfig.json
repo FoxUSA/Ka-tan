@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es5"
+    },
+    "filesGlob": [
+        "./app/**/*.ts",
+        "./bower_components/**/*.d.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": false
+    }
+}
