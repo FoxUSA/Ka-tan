@@ -3,13 +3,12 @@ module.exports = function(grunt) {
 	    grunt.initConfig({
 			typescript:{
                 base:{
-                    src: [	"bower_components/phaser/typescript/pixi.d.ts",
+                    src: [	"bower_components/phaser/typescript/pixi.d.ts",//This info is in 2 places. Here and in the tsconfig. TODO
 				        	"bower_components/phaser/typescript/phaser.d.ts",
 						  	"app/**/*ts"],
                     options:{
                         module: "amd",
-                        target: "es5",
-						generateTsConfig:true
+                        target: "es5"
                     }
                 }
             },
@@ -24,8 +23,10 @@ module.exports = function(grunt) {
             },
             connect: {
                 server: {
-                    port: 8080,
-                    base: "."
+					options: {
+	                    port: 8080,
+	                    base: "."
+					}
                 }
             }
 		});

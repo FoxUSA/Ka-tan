@@ -1,9 +1,8 @@
-module kaTan {
+namespace kaTan {
     export class LoadingState extends Phaser.State {
         public create() {
-            kaTanGame.state.add("TitleScreenState", kaTan.MenuState, true);
-            //this.state.add("GamePlayState", kaTan.GamePlayState, false);
-            //this.state.add("GameOverState", kaTan.GameOverState, false);
+            kaTanGame.state.add("MenuState", kaTan.MenuState, true);
+            kaTanGame.state.add("BoardState", kaTan.BoardState);
 
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         }
@@ -14,9 +13,7 @@ module kaTan {
 
         public preload() {
             // Graphics
-                //this.load.image("title", "Graphics/TitleScreen.png");
-                //this.load.image("scene", "Graphics/scene720p.png");
-                //this.load.image("gameover", "Graphics/GameOver.png");
+                this.load.image("tile", "app/resources/sprites/grass_14.png");
 
             //Spritesheets
                 //this.load.atlasXML("HERO_WALKING", "Graphics/Hero_Walking.png", "Graphics/Hero_Walking.xml");
@@ -35,8 +32,8 @@ module kaTan {
     }
 }
 
-var kaTanGame:Phaser.Game;
 
+var kaTanGame:Phaser.Game;
 window.onload = () => {
     kaTanGame = new kaTan.Game();
 };

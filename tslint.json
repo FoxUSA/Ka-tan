@@ -1,0 +1,61 @@
+{
+    "jsRules": {
+        "class-name": true,
+        "indent": [
+            true,
+            "spaces"
+        ],
+        "no-duplicate-variable": true,
+        "no-eval": true,
+        "no-trailing-whitespace": true,
+        "no-unsafe-finally": true,
+        "quotemark": [
+            true,
+            "double"
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords"
+        ],
+        "no-unused-variable": [true]
+    },
+    "rules": {
+        "class-name": true,
+        "indent": [
+            true,
+            "spaces"
+        ],
+        "no-eval": true,
+        "no-internal-module": true,
+        "no-trailing-whitespace": true,
+        "no-unsafe-finally": true,
+        "no-var-keyword": true,
+        "quotemark": [
+            true,
+            "double"
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "typedef-whitespace": [
+            true,
+            {
+                "call-signature": "nospace",
+                "index-signature": "nospace",
+                "parameter": "nospace",
+                "property-declaration": "nospace",
+                "variable-declaration": "nospace"
+            }
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords"
+        ],
+        "no-unused-variable": [true]
+    }
+}
