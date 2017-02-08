@@ -3,10 +3,13 @@ module.exports = function(grunt) {
 	    grunt.initConfig({
 			typescript:{
                 base:{
-                    src: [  "app/**/*ts"],
+                    src: [	"bower_components/phaser/typescript/pixi.d.ts",
+				        	"bower_components/phaser/typescript/phaser.d.ts",
+						  	"app/**/*ts"],
                     options:{
                         module: "amd",
-                        target: "es5"
+                        target: "es5",
+						generateTsConfig:true
                     }
                 }
             },

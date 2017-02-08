@@ -1,12 +1,14 @@
 {
     "compilerOptions": {
-        "target": "es5"
+        "outDir": "",
+        "target": "es5",
+        "module": "amd",
+        "noEmitOnError": true
     },
-    "filesGlob": [
-        "./app/**/*.ts",
-        "./bower_components/**/*.d.ts"
-    ],
-    "atom": {
-        "rewriteTsconfig": false
-    }
+    "files": [
+        "bower_components/phaser/typescript/pixi.d.ts",
+        "bower_components/phaser/typescript/phaser.d.ts",
+        "app/app.ts",
+        "app/states/menu.ts"
+    ]
 }

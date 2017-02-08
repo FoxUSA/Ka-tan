@@ -8,14 +8,14 @@ var kaTan;
     var MenuState = (function (_super) {
         __extends(MenuState, _super);
         function MenuState() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MenuState.prototype.create = function () {
         };
         MenuState.prototype.init = function () {
-            alert("Menu Init");
+            alert("Menu Init"); //FIXME
         };
         return MenuState;
-    }(Phaser.State));
+    })(Phaser.State);
     kaTan.MenuState = MenuState;
 })(kaTan || (kaTan = {}));

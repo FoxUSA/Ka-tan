@@ -10,8 +10,6 @@ module kaTan {
 
         public init(){
             kaTanGame.stage.backgroundColor = "#356b92";
-
-            alert("Loading Init");//FIXME
         }
 
         public preload() {
@@ -32,7 +30,7 @@ module kaTan {
 
     export class Game extends Phaser.Game{
         constructor() {
-            super(1280, 720, Phaser.AUTO, "content");
+            super(1280, 720, Phaser.AUTO, "content",new LoadingState());
         }
     }
 }
