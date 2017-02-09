@@ -1,14 +1,28 @@
 namespace kaTan {
     export class LoadingState extends Phaser.State {
-        public create() {
-            kaTanGame.state.add("MenuState", kaTan.MenuState, true);
-            kaTanGame.state.add("BoardState", kaTan.BoardState);
-
-            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-        }
-
         public init(){
             kaTanGame.stage.backgroundColor = "#356b92";
+            kaTanGame.kineticScrolling = kaTanGame.plugins.add((<any>Phaser.Plugin).KineticScrolling);
+        }
+
+        public create() {
+            //Add states
+                kaTanGame.state.add("MenuState", kaTan.MenuState, true);
+                kaTanGame.state.add("BoardState", kaTan.BoardState);
+
+            //Scale screen
+                //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL; TODO
+
+            //Config scrolling
+                kaTanGame.kineticScrolling.configure({
+                    kineticMovement: true,
+                    timeConstantScroll: 325,
+                    horizontalScroll: true,
+                    verticalScroll: true,
+                    horizontalWheel: true,
+                    verticalWheel: false,
+                    deltaWheel: 40
+                });
         }
 
         public preload() {
@@ -26,6 +40,7 @@ namespace kaTan {
     }
 
     export class Game extends Phaser.Game{
+        kineticScrolling:any;
         constructor() {
             super(1280, 720, Phaser.AUTO, "content",new LoadingState());
         }
@@ -33,7 +48,7 @@ namespace kaTan {
 }
 
 
-var kaTanGame:Phaser.Game;
+var kaTanGame:kaTan.Game;
 window.onload = () => {
     kaTanGame = new kaTan.Game();
 };
