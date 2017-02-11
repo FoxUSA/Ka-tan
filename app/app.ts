@@ -11,23 +11,18 @@ namespace kaTan {
                 kaTanGame.state.add("BoardState", kaTan.BoardState);
 
             //Scale screen
-                //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL; TODO
-
-            //Config scrolling
-                kaTanGame.kineticScrolling.configure({
-                    kineticMovement: true,
-                    timeConstantScroll: 325,
-                    horizontalScroll: true,
-                    verticalScroll: true,
-                    horizontalWheel: true,
-                    verticalWheel: false,
-                    deltaWheel: 40
-                });
+                //this.scale.scaleMode = Phaser.ScaleManager.USER_SCALE; TODO
         }
 
         public preload() {
-            // Graphics
-                this.load.image("tile", "app/resources/sprites/grass_14.png");
+            //Graphics
+                //Tiles
+                    this.load.image("rockTile", "app/resources/sprites/grass_14.png");
+                    this.load.image("woodsTile", "app/resources/sprites/grass_12.png");
+                    this.load.image("desertTile", "app/resources/sprites/sand_15.png");
+                    this.load.image("wheatTile", "app/resources/sprites/medieval_windmill.png");
+                    this.load.image("sheepTile", "app/resources/sprites/grass_05.png");
+                    this.load.image("brickTile", "app/resources/sprites/mars_19.png");
 
             //Spritesheets
                 //this.load.atlasXML("HERO_WALKING", "Graphics/Hero_Walking.png", "Graphics/Hero_Walking.xml");
