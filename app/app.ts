@@ -2,7 +2,7 @@ namespace kaTan {
     export class LoadingState extends Phaser.State {
         public init(){
             kaTanGame.stage.backgroundColor = "#356b92";
-            kaTanGame.kineticScrolling = kaTanGame.plugins.add((<any>Phaser.Plugin).KineticScrolling);
+            //kaTanGame.kineticScrolling = kaTanGame.plugins.add((<any>Phaser.Plugin).KineticScrolling);//TODO usefully code to disable typescript
         }
 
         public create() {
@@ -11,7 +11,7 @@ namespace kaTan {
                 kaTanGame.state.add("BoardState", kaTan.BoardState);
 
             //Scale screen
-                //this.scale.scaleMode = Phaser.ScaleManager.USER_SCALE; TODO
+                this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         }
 
         public preload() {
@@ -23,6 +23,10 @@ namespace kaTan {
                     this.load.image("wheatTile", "app/resources/sprites/medieval_windmill.png");
                     this.load.image("sheepTile", "app/resources/sprites/grass_05.png");
                     this.load.image("brickTile", "app/resources/sprites/mars_19.png");
+
+                //Pieces
+                    this.load.image("city", "app/resources/sprites/castle_large.png");
+                    this.load.image("town", "app/resources/sprites/tower.png");
 
             //Spritesheets
                 //this.load.atlasXML("HERO_WALKING", "Graphics/Hero_Walking.png", "Graphics/Hero_Walking.xml");

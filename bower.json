@@ -16,7 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "phaser": "^2.6.2",
-    "phaser-kinetic-scrolling-plugin": "^1.0.4"
+    "phaser": "^2.6.2"
   }
 }

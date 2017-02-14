@@ -2,15 +2,19 @@ namespace kaTan {
     export class BoardState extends Phaser.State {
         game: kaTan.Game;
         private tiles: TileEntity[] = [];
+        private cameraController: CameraController;
         constructor(game: kaTan.Game) {
             super();
             this.game = game;
         }
 
-        create() {
+        /**
+         * Create board tiles
+         */
+        private createBoard(){
             //Setup board
-                let startX = 200;
-                let startY = 200;
+                let startX = 400;
+                let startY = 400;
 
                 let offsetX = 130;
                 let offsetY = 115;
@@ -66,18 +70,31 @@ namespace kaTan {
                         count++;
                         this.tiles.push(tile);
                 }
-
-            this.game.world.setBounds(0, 0, 2000, 2000);
-
-            //Create from controller
-                new CameraController(this.game);
         }
 
-        /**
-         * Room controls
-         */
-        update() {
-            super.update();
+        create() {
+            //Setup Board
+                this.createBoard();
+                this.game.world.setBounds(0, 0, 1500, 1500);
+
+            //Add UI Controls
+                kaTanGame.add.existing(new PieceEntity(this.game,100,100,"town"));
+                kaTanGame.add.existing(new PieceEntity(this.game,0,0,"city"));
+
+            //Create from controller
+                this.cameraController = new CameraController(this.game);
+        }
+
+        update(){
+            this.cameraController.update();
+        }
+
+        render(){
+            super.render();
+
+            //Debug
+                this.game.debug.inputInfo(32, 32);
+                this.game.debug.cameraInfo(this.game.camera, 32, 200);
         }
     }
 }
