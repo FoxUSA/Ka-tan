@@ -83,6 +83,8 @@ namespace kaTan {
 
             //Create from controller
                 this.cameraController = new CameraController(this.game);
+                this.game.camera.x=82;
+                this.game.camera.y=343;
         }
 
         update(){
