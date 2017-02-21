@@ -14,7 +14,7 @@ namespace kaTan {
          */
         private createBoard(tileGroup: Phaser.Group){
             //Setup board
-                let startX = 400;
+                let startX = 600;
                 let startY = 400;
 
                 let offsetX = 130;
@@ -97,17 +97,17 @@ namespace kaTan {
         private createPiece(pieceGroup: Phaser.Group, x:number,y:number,xOffset:number,yOffset:number,tint:number){
             for(let i = 0;i<5;i++)
                 pieceGroup.add(new PieceEntity( this.game,
-                                                        x+this.game.rnd.integerInRange(5, 30),
-                                                        y+this.game.rnd.integerInRange(5, 30),
-                                                        "town",
-                                                        tint));
+                                                x+this.game.rnd.integerInRange(5, 30),
+                                                y+this.game.rnd.integerInRange(5, 30),
+                                                "town",
+                                                tint));
 
             for(let i = 0;i<4;i++)
                 pieceGroup.add(new PieceEntity( this.game,
-                                                        x+xOffset+this.game.rnd.integerInRange(5, 30),
-                                                        y+yOffset+this.game.rnd.integerInRange(5, 30),
-                                                        "city",
-                                                        tint));
+                                                x+xOffset+this.game.rnd.integerInRange(5, 30),
+                                                y+yOffset+this.game.rnd.integerInRange(5, 30),
+                                                "city",
+                                                tint));
         }
 
         /**
@@ -121,16 +121,17 @@ namespace kaTan {
             this.game.add.existing(tileGroup);
             this.game.add.existing(pieceGroup);
             this.game.add.existing(numberGroup);
+            this.game.add.existing(new DiceEntity(this.game));
 
             //Setup Board
                 this.createBoard(tileGroup);
                 this.game.world.setBounds(0, 0, 1500, 1500);
 
             //Add Pieces
-                this.createPiece(pieceGroup, 600,300,100,0,0x428ff4);
-                this.createPiece(pieceGroup, 600,1000,100,0,0xffffff);
-                this.createPiece(pieceGroup, 200,600,0,100,0xf47d42);
-                this.createPiece(pieceGroup, 1100,600,0,100,0x41f465);
+                this.createPiece(pieceGroup, 800,300,100,0,0x428ff4);
+                this.createPiece(pieceGroup, 800,1000,100,0,0xffffff);
+                this.createPiece(pieceGroup, 400,600,0,100,0xf47d42);
+                this.createPiece(pieceGroup, 1300,600,0,100,0x41f465);
 
             //Create from controller
                 this.cameraController = new CameraController(this.game);
@@ -146,8 +147,10 @@ namespace kaTan {
             super.render();
 
             //Debug
-                this.game.debug.inputInfo(32, 32);
-                this.game.debug.cameraInfo(this.game.camera, 32, 200);
+                if(Config.debug){
+                    this.game.debug.inputInfo(32, this.game.height*.7);
+                    this.game.debug.cameraInfo(this.game.camera, 32,  this.game.height*.85);
+                }
         }
     }
 }
