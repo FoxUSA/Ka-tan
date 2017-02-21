@@ -121,7 +121,13 @@ namespace kaTan {
             this.game.add.existing(tileGroup);
             this.game.add.existing(pieceGroup);
             this.game.add.existing(numberGroup);
-            this.game.add.existing(new DiceEntity(this.game));
+
+            //UI
+                this.game.add.existing(new DiceEntity(this.game));
+                this.game.add.sprite(32, 100, "showIcon");
+                this.game.add.sprite(32, 200, "showIcon");
+                this.game.add.sprite(32, 300, "showIcon");
+                this.game.add.sprite(32, 400, "showIcon");
 
             //Setup Board
                 this.createBoard(tileGroup);

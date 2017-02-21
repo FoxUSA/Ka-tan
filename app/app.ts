@@ -29,7 +29,7 @@ namespace kaTan {
                     this.load.image("town", "app/resources/sprites/pieces/tower.png");
 
                 //Icons
-                    this.load.image("diceIcon", "app/resources/sprites/multiplayer.png");
+                    this.load.image("showIcon", "app/resources/sprites/contrast.png");
 
             //Spritesheets
                 //this.load.atlasXML("HERO_WALKING", "Graphics/Hero_Walking.png", "Graphics/Hero_Walking.xml");
