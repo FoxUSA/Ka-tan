@@ -17,16 +17,16 @@ namespace kaTan {
         public preload() {
             //Graphics
                 //Tiles
-                    this.load.image("rockTile", "app/resources/sprites/grass_14.png");
-                    this.load.image("woodsTile", "app/resources/sprites/grass_12.png");
-                    this.load.image("desertTile", "app/resources/sprites/sand_15.png");
-                    this.load.image("wheatTile", "app/resources/sprites/medieval_windmill.png");
-                    this.load.image("sheepTile", "app/resources/sprites/grass_05.png");
-                    this.load.image("brickTile", "app/resources/sprites/mars_19.png");
+                    this.load.image("rockTile", "app/resources/sprites/tiles/grass_14.png");
+                    this.load.image("woodsTile", "app/resources/sprites/tiles/grass_12.png");
+                    this.load.image("desertTile", "app/resources/sprites/tiles/sand_15.png");
+                    this.load.image("wheatTile", "app/resources/sprites/tiles/medieval_windmill.png");
+                    this.load.image("sheepTile", "app/resources/sprites/tiles/grass_05.png");
+                    this.load.image("brickTile", "app/resources/sprites/tiles/mars_19.png");
 
                 //Pieces
-                    this.load.image("city", "app/resources/sprites/castle_large.png");
-                    this.load.image("town", "app/resources/sprites/tower.png");
+                    this.load.image("city", "app/resources/sprites/pieces/castle_open.png");
+                    this.load.image("town", "app/resources/sprites/pieces/tower.png");
 
             //Spritesheets
                 //this.load.atlasXML("HERO_WALKING", "Graphics/Hero_Walking.png", "Graphics/Hero_Walking.xml");
