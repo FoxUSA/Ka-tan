@@ -15,5 +15,8 @@
     "grunt-typescript": "^0.8.0",
     "tslint": "^4.4.2",
     "typescript": "^2.1.5"
+  },
+  "dependencies": {
+    "socket.io-client": "^1.7.3"
   }
 }

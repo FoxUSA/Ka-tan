@@ -5,23 +5,17 @@ namespace kaTan {
             super(game, 32, 30,"",Config.defaultTextStyle);
             this.game=game;
             this.fixedToCamera=true;
-            this.text = "Roll:"+this.roll();
+            this.roll();
+
+            this.inputEnabled = true;
+            this.events.onInputDown.add(this.roll,this);
         }
 
         /**
          * Roll the dice
-         * @return {number} - number from 2 - 12
          */
-        private roll():number{
-            return this.game.rnd.integerInRange(1, 6)+this.game.rnd.integerInRange(1, 6); //Have to do it this way because a random number from 2 to 12 would not have probability.
-        }
-
-        /**
-         * Phaser update method
-         */
-        update(){
-            //this.text = "Roll:"+this.roll();
-            //TODO clickabe to re roll
+        private roll():void{
+            this.text = "Roll:"+ (this.game.rnd.integerInRange(1, 6)+this.game.rnd.integerInRange(1, 6)); //Have to do it this way because a random number from 2 to 12 would not have probability.
         }
     }
 }

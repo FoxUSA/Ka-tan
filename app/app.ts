@@ -43,6 +43,9 @@ namespace kaTan {
 
     export class Game extends Phaser.Game{
         kineticScrolling:any;
+        //SocketIO
+            public socket:any;
+
         constructor() {
             super(1280, 720, Phaser.AUTO, "content",new LoadingState());
         }

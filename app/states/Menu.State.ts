@@ -1,13 +1,13 @@
+declare var io;
 namespace kaTan {
     export class MenuState extends Phaser.State {
-        create() {
-            let bla = new Phaser.Sprite(kaTanGame,0,0);
-            kaTanGame.add.existing(bla);
-        }
+        game:kaTan.Game;
 
         init(){
-            this.game.state.start("BoardState");
+            this.game.socket=io("http://localhost:3000");
+            this.game.socket.on("connect", ()=>{
+                this.game.state.start("BoardState");
+            });
         }
-
     }
 }

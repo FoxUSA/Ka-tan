@@ -86,28 +86,30 @@ namespace kaTan {
         }
 
         /**
-         * [createPiece description]
-         * @param  {Phaser.Group} pieceGroup  [description]
-         * @param  {number}       x           [description]
-         * @param  {number}       y           [description]
-         * @param  {number}       xOffset     [description]
-         * @param  {number}       yOffset     [description]
-         * @param  {number}       tint        [description]
+         * Create pieces for a player
+         * @param  {Phaser.Group} pieceGroup   [description]
+         * @param  {number}       x            [description]
+         * @param  {number}       y            [description]
+         * @param  {number}       xOffset      [description]
+         * @param  {number}       yOffset      [description]
+         * @param  {number}       playerNumber [description]
          */
-        private createPiece(pieceGroup: Phaser.Group, x:number,y:number,xOffset:number,yOffset:number,tint:number){
+        private createPiece(pieceGroup: Phaser.Group, x:number,y:number,xOffset:number,yOffset:number,playerNumber:number){
             for(let i = 0;i<5;i++)
                 pieceGroup.add(new PieceEntity( this.game,
                                                 x+this.game.rnd.integerInRange(5, 30),
                                                 y+this.game.rnd.integerInRange(5, 30),
                                                 "town",
-                                                tint));
+                                                playerNumber,
+                                                i));
 
             for(let i = 0;i<4;i++)
                 pieceGroup.add(new PieceEntity( this.game,
                                                 x+xOffset+this.game.rnd.integerInRange(5, 30),
                                                 y+yOffset+this.game.rnd.integerInRange(5, 30),
                                                 "city",
-                                                tint));
+                                                playerNumber,
+                                                i));
         }
 
         /**
@@ -134,10 +136,10 @@ namespace kaTan {
                 this.game.world.setBounds(0, 0, 1500, 1500);
 
             //Add Pieces
-                this.createPiece(pieceGroup, 800,300,100,0,0x428ff4);
-                this.createPiece(pieceGroup, 800,1000,100,0,0xffffff);
-                this.createPiece(pieceGroup, 400,600,0,100,0xf47d42);
-                this.createPiece(pieceGroup, 1300,600,0,100,0x41f465);
+                this.createPiece(pieceGroup, 800,300,100,0,0);
+                this.createPiece(pieceGroup, 800,1000,100,0,1);
+                this.createPiece(pieceGroup, 400,600,0,100,2);
+                this.createPiece(pieceGroup, 1300,600,0,100,3);
 
             //Create from controller
                 this.cameraController = new CameraController(this.game);
