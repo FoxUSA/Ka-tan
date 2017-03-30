@@ -23,6 +23,7 @@ namespace kaTan {
                     this.load.image("wheatTile", "app/resources/sprites/tiles/medieval_windmill.png");
                     this.load.image("sheepTile", "app/resources/sprites/tiles/grass_05.png");
                     this.load.image("brickTile", "app/resources/sprites/tiles/mars_19.png");
+                    this.load.image("dock", "app/resources/sprites/tiles/dock.png");
 
                 //Pieces
                     this.load.image("city", "app/resources/sprites/pieces/castle_open.png");

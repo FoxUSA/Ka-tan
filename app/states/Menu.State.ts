@@ -4,7 +4,7 @@ namespace kaTan {
         game:kaTan.Game;
 
         init(){
-            this.game.socket=io("http://localhost:3000");
+            this.game.socket=io(Config.serverURL);
             this.game.socket.on("connect", ()=>{
                 this.game.state.start("BoardState");
             });

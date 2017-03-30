@@ -1,13 +1,4 @@
 namespace kaTan {
-    export enum TileType{
-        brick,
-        sheep,
-        woods,
-        wheat,
-        rock,
-        desert
-    }
-
     export class TileEntity extends Phaser.Image {
         private static numberHints={ // Used to dispaly number hints
             2:".",
@@ -23,9 +14,8 @@ namespace kaTan {
         };
         tileText:Phaser.Text;
         hintText:Phaser.Text;
-        constructor(game: Phaser.Game, x: number, y: number,type:TileType, tileNumber:number=0) {
-            let typeName = TileType[type]+"Tile";
-            super(game, x, y, typeName, 0);
+        constructor(game: Phaser.Game, x: number, y: number,type:string, tileNumber:number=0) {
+            super(game, x, y, type+"Tile", 0);
 
             //Tile Number
                 if(tileNumber==0)//Dont display zero
