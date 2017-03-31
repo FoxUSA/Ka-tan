@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "Gruntfile.js",
-  "author": "",
+  "author": "FoxUSA",
   "license": "MIT",
   "devDependencies": {
     "grunt": "^0.4.5",

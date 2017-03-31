@@ -20,9 +20,13 @@ namespace kaTan {
             //Tile Number
                 if(tileNumber==0)//Dont display zero
                     return;
-                this.tileText = this.game.add.text(this.x + this.width / 2,this.y + this.height *.70,tileNumber.toString(),Config.defaultTextStyle);
-                this.hintText = this.game.add.text(this.x + this.width / 2,this.y + this.height *.76,TileEntity.numberHints[tileNumber],Config.defaultTextStyle);
-                //TODO red text if 8 or 6
+
+                let textStyle = Config.defaultTextStyle();
+                if(tileNumber == 6 || tileNumber == 8)
+                    textStyle.fill="#f44336";
+
+                this.tileText = this.game.add.text(this.x + this.width / 2,this.y + this.height *.70,tileNumber.toString(),textStyle);
+                this.hintText = this.game.add.text(this.x + this.width / 2,this.y + this.height *.76,TileEntity.numberHints[tileNumber],textStyle);
                 this.tileText.anchor.set(0.5);
                 this.hintText.anchor.set(0.5);
         }

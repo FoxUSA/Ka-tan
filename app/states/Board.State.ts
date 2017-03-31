@@ -13,10 +13,12 @@ namespace kaTan {
         create() {
             let dockGroup = new Phaser.Group(this.game);
             let tileGroup = new Phaser.Group(this.game);
+            let roadGroup = new Phaser.Group(this.game);
             let pieceGroup = new Phaser.Group(this.game);
 
             this.game.add.existing(dockGroup);
             this.game.add.existing(tileGroup);
+            this.game.add.existing(roadGroup);
             this.game.add.existing(pieceGroup);
 
             //UI
@@ -56,13 +58,21 @@ namespace kaTan {
                                                             tile.diceNumber));
                         });
 
-                        for(let piece in data.pieces)
-                            pieceGroup.add(new PieceEntity( this.game,
-                                                            data.pieces[piece].x,
-                                                            data.pieces[piece].y,
-                                                            data.pieces[piece].spriteKey,
-                                                            data.pieces[piece].playerNumber,
-                                                            data.pieces[piece].id));
+                        for(let piece in data.pieces){
+                            let pieceEntity = new PieceEntity(this.game,
+                                                        data.pieces[piece].x,
+                                                        data.pieces[piece].y,
+                                                        data.pieces[piece].angle,
+                                                        data.pieces[piece].spriteKey,
+                                                        data.pieces[piece].playerNumber,
+                                                        data.pieces[piece].id);
+
+                            //Roads will now always be under other pieces
+                                if(data.pieces[piece].spriteKey=="road")
+                                    roadGroup.add(pieceEntity);
+                                else
+                                    pieceGroup.add(pieceEntity);
+                        }
                     });
                     this.game.socket.emit("requestInitBoardUpdate");
                 };

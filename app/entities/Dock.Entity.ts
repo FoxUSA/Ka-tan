@@ -14,6 +14,15 @@ namespace kaTan {
             this.angle=angle;
             this.width=70;
             this.height=70;
+
+            let textStyle = Config.defaultTextStyle();
+            textStyle.fontSize=15;
+            textStyle.align="center";
+
+            let text= new Phaser.Text(this.game, x, y, "2:1\nsheep", textStyle);
+            text.anchor.setTo(.5,.5);;
+
+            this.game.add.existing(text);//FIXME
         }
     }
 }

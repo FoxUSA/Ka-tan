@@ -26,8 +26,12 @@ namespace kaTan {
                     this.load.image("dock", "app/resources/sprites/tiles/dock.png");
 
                 //Pieces
-                    this.load.image("city", "app/resources/sprites/pieces/castle_open.png");
-                    this.load.image("town", "app/resources/sprites/pieces/tower.png");
+                    for(let i = 0; i<4;i++){
+                        this.load.image("city"+i, "app/resources/sprites/pieces/city"+i+".png");
+                        this.load.image("town"+i, "app/resources/sprites/pieces/tower"+i+".png");
+                        this.load.image("road"+i, "app/resources/sprites/pieces/road"+i+".png");
+                    }
+                    this.load.image("robber", "app/resources/sprites/pieces/robber.png");
 
                 //Icons
                     this.load.image("showIcon", "app/resources/sprites/contrast.png");
