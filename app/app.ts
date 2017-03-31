@@ -52,7 +52,7 @@ namespace kaTan {
             public socket:any;
 
         constructor() {
-            super(1280, 720, Phaser.AUTO, "content",new LoadingState());
+            super("100", "100", Phaser.AUTO, "content",new LoadingState());
         }
     }
 }

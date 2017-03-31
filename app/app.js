@@ -52,7 +52,7 @@ var kaTan;
     var Game = (function (_super) {
         __extends(Game, _super);
         function Game() {
-            _super.call(this, 1280, 720, Phaser.AUTO, "content", new LoadingState());
+            _super.call(this, "100", "100", Phaser.AUTO, "content", new LoadingState());
         }
         return Game;
     })(Phaser.Game);
