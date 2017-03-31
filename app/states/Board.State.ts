@@ -18,15 +18,15 @@ namespace kaTan {
 
             this.game.add.existing(dockGroup);
             this.game.add.existing(tileGroup);
-            this.game.add.existing(roadGroup);
+            this.game.add.existing(roadGroup);//TODO sort piece group so you dont need two groups for z
             this.game.add.existing(pieceGroup);
 
             //UI
                 this.game.add.existing(new DiceEntity(this.game));
-                this.game.add.sprite(32, 100, "showIcon");
+                /*this.game.add.sprite(32, 100, "showIcon");
                 this.game.add.sprite(32, 200, "showIcon");
                 this.game.add.sprite(32, 300, "showIcon");
-                this.game.add.sprite(32, 400, "showIcon");
+                this.game.add.sprite(32, 400, "showIcon");*///FIXME
 
             //Setup Board
                 this.game.world.setBounds(0, 0, 2000, 1500);
@@ -35,17 +35,6 @@ namespace kaTan {
                 this.cameraController = new CameraController(this.game);
                 this.game.camera.x=82;
                 this.game.camera.y=343;
-
-            //TODO
-                dockGroup.add(new DockEntity(this.game, 880,400,-210));
-                dockGroup.add(new DockEntity(this.game, 1090,400,210));
-                dockGroup.add(new DockEntity(this.game, 685,515,-210));
-                dockGroup.add(new DockEntity(this.game, 1195,585,-90));
-                dockGroup.add(new DockEntity(this.game, 580,700,90));
-                dockGroup.add(new DockEntity(this.game, 1195,815,-90));
-                dockGroup.add(new DockEntity(this.game, 685,885,30));
-                dockGroup.add(new DockEntity(this.game, 880,1000,30));
-                dockGroup.add(new DockEntity(this.game, 1090,1000,-30));
 
             //Handle a full board update
                 let handleReturn = ()=>{
@@ -56,6 +45,14 @@ namespace kaTan {
                                                             tile.y,
                                                             tile.tileType,
                                                             tile.diceNumber));
+                        });
+
+                        data.docks.forEach((dock)=>{
+                             dockGroup.add(new DockEntity(  this.game,
+                                                            dock.x,
+                                                            dock.y,
+                                                            dock.angle,
+                                                            dock.type));
                         });
 
                         for(let piece in data.pieces){
