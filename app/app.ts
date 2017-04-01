@@ -2,6 +2,9 @@ namespace kaTan {
     export class LoadingState extends Phaser.State {
         public init(){
             kaTanGame.stage.backgroundColor = "#356b92";
+            if(Config.debug)
+                this.game.time.advancedTiming=true;
+
             //kaTanGame.kineticScrolling = kaTanGame.plugins.add((<any>Phaser.Plugin).KineticScrolling);//TODO usefully code to disable typescript
         }
 
@@ -32,6 +35,9 @@ namespace kaTan {
                         this.load.image("road"+i, "app/resources/sprites/pieces/road"+i+".png");
                     }
                     this.load.image("robber", "app/resources/sprites/pieces/robber.png");
+
+                    for(let i = 0; i<6;i++)
+                        this.load.image("boat"+i, "app/resources/sprites/boats/ship"+i+".png");
 
                 //Icons
                     this.load.image("showIcon", "app/resources/sprites/contrast.png");

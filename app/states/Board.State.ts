@@ -48,7 +48,14 @@ namespace kaTan {
                         });
 
                         data.docks.forEach((dock)=>{
-                             dockGroup.add(new DockEntity(  this.game,
+                            if(Config.decorations)
+                                dockGroup.add(new BoatEntity(   this.game,
+                                                                dock.boatX,
+                                                                dock.boatY,
+                                                                dock.x,
+                                                                dock.y,
+                                                                dock.boatAngle));
+                            dockGroup.add(new DockEntity(   this.game,
                                                             dock.x,
                                                             dock.y,
                                                             dock.angle,
@@ -56,13 +63,13 @@ namespace kaTan {
                         });
 
                         for(let piece in data.pieces){
-                            let pieceEntity = new PieceEntity(this.game,
-                                                        data.pieces[piece].x,
-                                                        data.pieces[piece].y,
-                                                        data.pieces[piece].angle,
-                                                        data.pieces[piece].spriteKey,
-                                                        data.pieces[piece].playerNumber,
-                                                        data.pieces[piece].id);
+                            let pieceEntity = new PieceEntity(  this.game,
+                                                                data.pieces[piece].x,
+                                                                data.pieces[piece].y,
+                                                                data.pieces[piece].angle,
+                                                                data.pieces[piece].spriteKey,
+                                                                data.pieces[piece].playerNumber,
+                                                                data.pieces[piece].id);
 
                             //Roads will now always be under other pieces
                                 if(data.pieces[piece].spriteKey=="road")
@@ -70,6 +77,8 @@ namespace kaTan {
                                 else
                                     pieceGroup.add(pieceEntity);
                         }
+
+                        dockGroup.sort("z", Phaser.Group.SORT_DESCENDING);
                     });
                     this.game.socket.emit("requestInitBoardUpdate");
                 };
@@ -80,6 +89,8 @@ namespace kaTan {
                 this.game.socket.on("disconnect", ()=>{
                     this.game.state.start("MenuState");
                 });
+
+
         }
 
         update(){
@@ -88,12 +99,8 @@ namespace kaTan {
 
         render(){
             super.render();
-
-            //Debug
-                if(Config.debug){
-                    this.game.debug.inputInfo(32, this.game.height*.7);
-                    this.game.debug.cameraInfo(this.game.camera, 32,  this.game.height*.85);
-                }
+            if(Config.debug)
+                DebugController.render(this.game);
         }
     }
 }
