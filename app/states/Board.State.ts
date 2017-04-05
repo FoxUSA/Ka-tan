@@ -87,6 +87,7 @@ namespace kaTan {
 
             //Handle disconnect
                 this.game.socket.on("disconnect", ()=>{
+                    alertify.error("Disconnected from server");
                     this.game.state.start("MenuState");
                 });
 

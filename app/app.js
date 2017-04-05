@@ -52,5 +52,10 @@ var kaTan;
 })(kaTan || (kaTan = {}));
 var kaTanGame;
 window.onload = function () {
-    kaTanGame = new kaTan.Game();
+    alertify.parent(document.body);
+    alertify.defaultValue(window.location.protocol + "//" + window.location.hostname + ":3000").prompt("Enter the server address. The person on the phone probably knows", function (val, ev) {
+        ev.preventDefault();
+        kaTanGame = new kaTan.Game();
+        kaTan.Config.serverURL = val;
+    });
 };

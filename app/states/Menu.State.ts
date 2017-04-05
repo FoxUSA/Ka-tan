@@ -7,6 +7,7 @@ namespace kaTan {
         init(){
             this.game.socket=io(Config.serverURL);
             this.game.socket.on("connect", ()=>{
+                alertify.success("Connected to server");
                 this.game.state.start("BoardState");
             });
         }

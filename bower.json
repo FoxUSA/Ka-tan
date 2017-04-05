@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "phaser": "^2.6.2",
-    "tween.js": "tweenjs#^16.6.0"
+    "tween.js": "tweenjs#^16.6.0",
+    "alertifyjs": "^1.0.11"
   }
 }
