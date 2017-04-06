@@ -6,7 +6,6 @@ namespace kaTan {
             if(Config.debug)
                 this.game.time.advancedTiming=true;
 
-            //kaTanGame.kineticScrolling = kaTanGame.plugins.add((<any>Phaser.Plugin).KineticScrolling);//TODO usefully code to disable typescript
         }
 
         public create() {
@@ -15,11 +14,15 @@ namespace kaTan {
                 kaTanGame.state.add("BoardState", kaTan.BoardState);
 
             //Scale screen
-                this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+                this.scale.scaleMode = Phaser.ScaleManager.RESIZE;
+                this.scale.minWidth = 1000;
+                this.scale.fullScreenScaleMode = Phaser.ScaleManager.RESIZE;
         }
 
         public preload() {
             //Graphics
+                this.load.image("flag", "app/resources/sprites/flag.png");
+
                 //Tiles
                     this.load.image("rockTile", "app/resources/sprites/tiles/grass_14.png");
                     this.load.image("woodsTile", "app/resources/sprites/tiles/grass_12.png");
@@ -67,10 +70,5 @@ namespace kaTan {
 
 var kaTanGame:kaTan.Game;
 window.onload = function() {
-    alertify.parent(document.body);
-    alertify.defaultValue(window.location.protocol+"//"+window.location.hostname+":3000").prompt("Enter the server address. The person on the phone probably knows", function (val, ev) {
-        ev.preventDefault();
-        kaTanGame = new kaTan.Game();
-        kaTan.Config.serverURL=val;
-    });
+    kaTanGame = new kaTan.Game();
 };

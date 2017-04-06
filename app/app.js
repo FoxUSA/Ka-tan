@@ -18,9 +18,12 @@ var kaTan;
         LoadingState.prototype.create = function () {
             kaTanGame.state.add("MenuState", kaTan.MenuState, true);
             kaTanGame.state.add("BoardState", kaTan.BoardState);
-            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            this.scale.scaleMode = Phaser.ScaleManager.RESIZE;
+            this.scale.minWidth = 1000;
+            this.scale.fullScreenScaleMode = Phaser.ScaleManager.RESIZE;
         };
         LoadingState.prototype.preload = function () {
+            this.load.image("flag", "app/resources/sprites/flag.png");
             this.load.image("rockTile", "app/resources/sprites/tiles/grass_14.png");
             this.load.image("woodsTile", "app/resources/sprites/tiles/grass_12.png");
             this.load.image("desertTile", "app/resources/sprites/tiles/sand_15.png");
@@ -52,10 +55,5 @@ var kaTan;
 })(kaTan || (kaTan = {}));
 var kaTanGame;
 window.onload = function () {
-    alertify.parent(document.body);
-    alertify.defaultValue(window.location.protocol + "//" + window.location.hostname + ":3000").prompt("Enter the server address. The person on the phone probably knows", function (val, ev) {
-        ev.preventDefault();
-        kaTanGame = new kaTan.Game();
-        kaTan.Config.serverURL = val;
-    });
+    kaTanGame = new kaTan.Game();
 };

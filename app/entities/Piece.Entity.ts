@@ -75,6 +75,18 @@ namespace kaTan {
                  });
 
             this.updateLast();
+
+
+            //Robber bounce
+                if(this.key=="robber"){
+
+                    //Only do sometimes
+                    if(this.game.rnd.integerInRange(0,2)!=1)
+                        return;
+
+                    this.anchor.setTo(this.game.rnd.realInRange(0,.05),this.game.rnd.realInRange(0,.05));
+                    this.scale.setTo(this.game.rnd.realInRange(1,1.05), this.game.rnd.realInRange(1.0,1.05));
+                }
         }
 
         /**
