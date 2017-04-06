@@ -1,4 +1,4 @@
 node_modules
-app/**/*.js
+app/**/*.ts
 app/**/*.map
 npm-debug.log
