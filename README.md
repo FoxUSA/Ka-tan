@@ -24,7 +24,7 @@ Launch the [server](https://github.com/FoxUSA/Ka-tan-Server) somewhere, forward 
 ## Recommended playing configuration
 ### Each player
 - 1 Device to do video calling over
-- 1 tablet to run the application
+- 1 Device to run the board
 - [1 Deck of CatanⓇ cards](https://www.amazon.com/gp/product/B014GFWBOM/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B014GFWBOM&linkCode=as2&tag=f05503-20&linkId=178d7645502d916e3481f89bf87b3ec9) `affiliate link`
 
 //TODO photo
