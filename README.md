@@ -34,7 +34,7 @@ A server that runs Node
 
 ## Support us
 
-[Give us a heart on Alternative To}(http://alternativeto.net/software/ka-tan/)
+[Give us a heart on Alternative To](http://alternativeto.net/software/ka-tan/)
 
 ## FAQ
 
