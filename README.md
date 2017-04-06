@@ -15,7 +15,7 @@ app/
 bower_components/
 ```
 onto a web server, s3, or [simply click here](https://foxusa.github.io/Ka-tan/)
-Launch the [server](https://github.com/FoxUSA/Ka-tan-Server) somewhere, forward ports if your behind a NAT(tldr Basically a router).
+- Launch the [server](https://github.com/FoxUSA/Ka-tan-Server) somewhere, forward ports if your behind a NAT(tldr Basically a router).
 - Send everyone the link. Enjoy!
 
 ![GIF of game](docs/katan.gif)
