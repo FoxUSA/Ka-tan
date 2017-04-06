@@ -1,5 +1,5 @@
 # Ka-Tan
-![Responsive](docs/Responsive.png)
+![Responsive](docs/Responsive2.png)
 
 
 Ka-tan is a board sharing program to play CatanⓇ with people over long distances.
