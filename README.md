@@ -32,6 +32,10 @@ Launch the [server](https://github.com/FoxUSA/Ka-tan-Server) somewhere, forward 
 ### Shared
 A server that runs Node
 
+## Support us
+
+[Give us a heart on Alternative To}(http://alternativeto.net/software/ka-tan/)
+
 ## FAQ
 
 ### I need a chat. Why don't you build one?
