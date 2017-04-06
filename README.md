@@ -8,7 +8,7 @@ Ka-tan is a board sharing program to play CatanⓇ with people over long distanc
 
 ## How to play
 - Do a `bower install`
-- Throw the
+- Throw
 ```
 index.html
 app/
