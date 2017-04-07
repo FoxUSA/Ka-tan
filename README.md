@@ -55,5 +55,5 @@ Thank you to http://kenney.nl/ for graphics
 
 ## License
 - Liscom flag is copyright of Liscom family 2016
-- Other art is public domain
+- Other art is [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 - Code is provided under a MIT license
