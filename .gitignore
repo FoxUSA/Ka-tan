@@ -1,4 +1,5 @@
 node_modules
 app/**/*.ts
 app/**/*.map
+build/
 npm-debug.log
