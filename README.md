@@ -2,22 +2,25 @@
 ![Responsive](docs/Responsive2.png)
 
 
-Ka-tan is a board sharing program to play CatanⓇ with people over long distances.
+Ka-tan is a board sharing program to play CatanⓇ with people over long distances. Unlike the many CatanⓇ apps, this was designed to emulate the physical nature of playing the actual board game as much as possible. No fancy trading dialog. This is more like if you had a camera pointed at your board and a robot moving the pieces on the other end. Same on your end for the other players.
 
 
 ## Short Demo Video
 [![Youtube](docs/video.png)](https://youtu.be/5hT4CSYWcNQ)
 
 ## How to play
-- Do a `bower install`
-- Throw
-```
-index.html
-app/
-bower_components/
-```
-onto a web server, s3, or [simply click here](https://foxusa.github.io/Ka-tan/)
+
+#### Client
+For the client [simply click here](http://katan.starlg.com)
+or
+- Download the latest [release](https://github.com/FoxUSA/Ka-tan/releases)
+- Throw the zip contents onto a web server, s3, or
+
+#### Server
 - Launch the [server](https://github.com/FoxUSA/Ka-tan-Server) somewhere, forward ports if your behind a NAT(tldr Basically a router).
+```
+If you want to try it out real quick, launch the server and put in http://127.0.0.1:3000 in the client
+```
 - Send everyone the link. Enjoy!
 
 ![GIF of game](docs/katan.gif)
@@ -34,11 +37,13 @@ Touch interface. You can drag pieces,and the robber around. To rotate roads, sim
 See video above.
 
 ### Shared
-A server that runs Node
+A machine that runs [NodeJS](https://nodejs.org/en/)
 
 ## Support us
 
-[Give us a heart on Alternative To](http://alternativeto.net/software/ka-tan/)
+- [Give us a heart on Alternative To](http://alternativeto.net/software/ka-tan/)
+- Make sure to star this project
+- Follow me on [GitHub](https://github.com/FoxUSA), [Twitter](https://twitter.com/FoxUSA)
 
 ## FAQ
 
