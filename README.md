@@ -4,22 +4,26 @@
 
 Ka-tan is a board sharing program to play CatanⓇ with people over long distances.
 
-//TODO youtube video
+
+## Short Demo Video
+[![Youtube](docs/video.png)](https://youtu.be/5hT4CSYWcNQ)
 
 ## How to play
 - Do a `bower install`
-- Throw the
+- Throw
 ```
 index.html
 app/
 bower_components/
 ```
-onto a web server, s3, or simply go here//TODO upload to github pages
-Launch the [server](https://github.com/FoxUSA/Ka-tan-Server) somewhere, forward ports if your behind a NAT(tldr Basically a router).
+onto a web server, s3, or [simply click here](https://foxusa.github.io/Ka-tan/)
+- Launch the [server](https://github.com/FoxUSA/Ka-tan-Server) somewhere, forward ports if your behind a NAT(tldr Basically a router).
 - Send everyone the link. Enjoy!
 
 ![GIF of game](docs/katan.gif)
 
+## Controls
+Touch interface. You can drag pieces,and the robber around. To rotate roads, simply double tap them. You can roll the dice by tapping the roll in the top left.
 
 ## Recommended playing configuration
 ### Each player
@@ -27,19 +31,19 @@ Launch the [server](https://github.com/FoxUSA/Ka-tan-Server) somewhere, forward 
 - 1 Device to run the board
 - [1 Deck of CatanⓇ cards](https://www.amazon.com/gp/product/B014GFWBOM/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B014GFWBOM&linkCode=as2&tag=f05503-20&linkId=178d7645502d916e3481f89bf87b3ec9) `affiliate link`
 
-//TODO photo
+See video above.
 
 ### Shared
 A server that runs Node
 
 ## Support us
 
-[Give us a heart on Alternative To}(http://alternativeto.net/software/ka-tan/)
+[Give us a heart on Alternative To](http://alternativeto.net/software/ka-tan/)
 
 ## FAQ
 
 ### I need a chat. Why don't you build one?
-Facetime, Hangouts, Skype, Duo, Allo ....
+Facetime, Hangouts, Skype, Duo, ....
 
 ### Why did you not implement cards
 
@@ -55,5 +59,5 @@ Thank you to http://kenney.nl/ for graphics
 
 ## License
 - Liscom flag is copyright of Liscom family 2016
-- Other art is public domain
+- Other art is [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 - Code is provided under a MIT license
