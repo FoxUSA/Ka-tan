@@ -23,7 +23,7 @@ If you want to try it out real quick, launch the server and put in http://127.0.
 ```
 - Send everyone the link. Enjoy!
 
-![GIF of game](docs/katan.gif)
+![Screenshot](docs/screenshot.png)
 
 ## Controls
 Touch interface. You can drag pieces,and the robber around. To rotate roads, simply double tap them. You can roll the dice by tapping the roll in the top left.
@@ -44,6 +44,8 @@ A machine that runs [NodeJS](https://nodejs.org/en/)
 - [Give us a heart on Alternative To](http://alternativeto.net/software/ka-tan/)
 - Make sure to star this project
 - Follow me on [GitHub](https://github.com/FoxUSA), [Twitter](https://twitter.com/FoxUSA)
+
+![GIF of game](docs/katan.gif)
 
 ## FAQ
 
