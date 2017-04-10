@@ -9,6 +9,6 @@ var kaTan;
             game.debug.cameraInfo(game.camera, 32, game.height * .85);
         };
         return DebugController;
-    }());
+    })();
     kaTan.DebugController = DebugController;
 })(kaTan || (kaTan = {}));

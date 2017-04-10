@@ -12,29 +12,33 @@ var kaTan;
             var key = spriteKey;
             if (playerNumber >= 0)
                 key += playerNumber;
-            _this = _super.call(this, game, x, y, key, 0) || this;
-            _this.playerNumber = playerNumber;
-            _this.id = id;
-            _this.angle = angle;
-            _this.inputEnabled = true;
-            _this.input.enableDrag(false, true);
+            _super.call(this, game, x, y, key, 0);
+            this.playerNumber = playerNumber;
+            this.id = id;
+            this.angle = angle;
+            this.inputEnabled = true;
+            this.input.enableDrag(false, true);
             if (key != "robber") {
-                _this.anchor.setTo(.5, .5);
-                _this.scale.setTo(.5, .5);
+                this.anchor.setTo(.5, .5);
+                this.scale.setTo(.5, .5);
             }
-            _this.setupDragHandlers();
+            this.setupDragHandlers();
+            //Double clack on road to rotate
             if (spriteKey == "road")
-                _this.setupDoubleClick();
-            _this.game.socket.on("pieceUpdate", function (data) {
+                this.setupDoubleClick();
+            this.game.socket.on("pieceUpdate", function (data) {
+                //Check if this event pretains to this specific piece
                 if (_this.id != data.id)
-                    return;
+                    return; //Ignore
                 _this.x = data.x;
                 _this.y = data.y;
                 _this.angle = data.angle;
                 _this.updateLast();
             });
-            return _this;
         }
+        /**
+         * Setup drag handlers
+         */
         PieceEntity.prototype.setupDragHandlers = function () {
             this.events.onDragStart.add(function (e) {
                 window.dispatchEvent(new Event("disableTouchScroll"));
@@ -43,6 +47,9 @@ var kaTan;
                 window.dispatchEvent(new Event("enableTouchScroll"));
             });
         };
+        /**
+         * Setup double click handler
+         */
         PieceEntity.prototype.setupDoubleClick = function () {
             var _this = this;
             this.events.onInputDown.add(function (sprite, pointer) {
@@ -61,13 +68,18 @@ var kaTan;
                     angle: this.angle
                 });
             this.updateLast();
+            //Robber bounce
             if (this.key == "robber") {
+                //Only do sometimes
                 if (this.game.rnd.integerInRange(0, 2) != 1)
                     return;
                 this.anchor.setTo(this.game.rnd.realInRange(0, .05), this.game.rnd.realInRange(0, .05));
                 this.scale.setTo(this.game.rnd.realInRange(1, 1.05), this.game.rnd.realInRange(1.0, 1.05));
             }
         };
+        /**
+         * Update last x and y
+         */
         PieceEntity.prototype.updateLast = function () {
             this.last = {
                 x: this.x,
@@ -76,6 +88,6 @@ var kaTan;
             };
         };
         return PieceEntity;
-    }(Phaser.Sprite));
+    })(Phaser.Sprite);
     kaTan.PieceEntity = PieceEntity;
 })(kaTan || (kaTan = {}));

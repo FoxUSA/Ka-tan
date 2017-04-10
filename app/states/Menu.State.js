@@ -8,8 +8,12 @@ var kaTan;
     var MenuState = (function (_super) {
         __extends(MenuState, _super);
         function MenuState() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
+        //TODO Connecting text
+        /**
+         * Gethostname and load into game
+         */
         MenuState.prototype.promptForHostname = function () {
             var _this = this;
             alertify.defaultValue("http://" + window.location.hostname + ":3000").prompt("Enter the server address. The person on the phone probably knows.", function (url, ev) {
@@ -22,6 +26,10 @@ var kaTan;
                 });
             });
         };
+        /**
+         * Start game
+         * @param  {string} url - socket url to connect with
+         */
         MenuState.prototype.startGame = function (url) {
             var _this = this;
             this.game.socket = io(url);
@@ -38,6 +46,6 @@ var kaTan;
             this.promptForHostname();
         };
         return MenuState;
-    }(Phaser.State));
+    })(Phaser.State);
     kaTan.MenuState = MenuState;
 })(kaTan || (kaTan = {}));

@@ -8,23 +8,23 @@ var kaTan;
     var BoatEntity = (function (_super) {
         __extends(BoatEntity, _super);
         function BoatEntity(game, x, y, toX, toY, angle) {
-            var _this = _super.call(this, game, x, y, "boat" + game.rnd.integerInRange(0, 5), 0) || this;
-            _this.stop = true;
-            _this.offSet = 75;
-            _this.origX = _this.x;
-            _this.origY = _this.y;
-            _this.toX = toX;
-            _this.toY = toY;
-            _this.game = game;
-            _this.anchor.setTo(.5, .5);
-            _this.scale.setTo(.75, .75);
-            _this.z = 100;
-            _this.speed = game.rnd.integerInRange(2, 3);
-            _this.angle = angle;
+            var _this = this;
+            _super.call(this, game, x, y, "boat" + game.rnd.integerInRange(0, 5), 0);
+            this.stop = true;
+            this.offSet = 75;
+            this.origX = this.x;
+            this.origY = this.y;
+            this.toX = toX;
+            this.toY = toY;
+            this.game = game;
+            this.anchor.setTo(.5, .5);
+            this.scale.setTo(.75, .75);
+            this.z = 100;
+            this.speed = game.rnd.integerInRange(2, 3);
+            this.angle = angle;
             setTimeout(function () {
                 _this.stop = false;
-            }, _this.game.rnd.integerInRange(0, 100000));
-            return _this;
+            }, this.game.rnd.integerInRange(0, 100000));
         }
         BoatEntity.prototype.between = function (n, toN) {
             return n >= toN - this.offSet && n <= toN + this.offSet;
@@ -57,6 +57,6 @@ var kaTan;
             }
         };
         return BoatEntity;
-    }(Phaser.Sprite));
+    })(Phaser.Sprite);
     kaTan.BoatEntity = BoatEntity;
 })(kaTan || (kaTan = {}));
