@@ -2,4 +2,5 @@ bower_components
 node_modules
 app/**/*.js
 app/**/*.map
+build/
 npm-debug.log
