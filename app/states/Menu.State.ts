@@ -1,4 +1,7 @@
 declare var io;
+
+const SERVER_URL_LOCAL_STORAGE_KEY = "katan-server-url";
+
 namespace kaTan {
     export class MenuState extends Phaser.State {
         game:kaTan.Game;
@@ -8,7 +11,9 @@ namespace kaTan {
          * Gethostname and load into game
          */
         private promptForHostname(){
-            alertify.defaultValue("http://"+window.location.hostname+":3000").prompt("Enter the server address. The person on the phone probably knows.", (url, ev) =>{
+            const lastUsedUrl = localStorage.getItem(SERVER_URL_LOCAL_STORAGE_KEY);
+            const defaultServerUrl = lastUsedUrl ? lastUsedUrl : "http://"+window.location.hostname+":3000";
+            alertify.defaultValue(defaultServerUrl).prompt("Enter the server address. The person on the phone probably knows.", (url, ev) =>{
                 ev.preventDefault();
 
                 alertify.confirm("Would you like to run in full screen?",()=>{
@@ -30,6 +35,7 @@ namespace kaTan {
             alertify.log("Connecting to "+url);
 
             this.game.socket.on("connect", ()=>{
+                window.localStorage.setItem(SERVER_URL_LOCAL_STORAGE_KEY, url);
                 alertify.success("Connected to server");
                 this.game.state.start("BoardState");
             },this.promptForHostname);
